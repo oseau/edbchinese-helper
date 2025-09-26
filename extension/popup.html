@@ -7,17 +7,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>EDB Chinese Helper</h1>
+        <h1>EDB 中文學習助手</h1>
         <nav class="nav-tabs">
-            <button class="tab-btn active" data-tab="index">词表</button>
-            <button class="tab-btn" data-tab="learn">学习</button>
-            <button class="tab-btn" data-tab="test">测试</button>
+            <button class="tab-btn active" data-tab="index">詞表</button>
+            <button class="tab-btn" data-tab="learn">學習</button>
+            <button class="tab-btn" data-tab="test">測試</button>
         </nav>
 
         <div id="index-tab" class="tab-content active">
             <div class="search-box">
-                <input type="text" id="search-input" placeholder="搜索汉字...">
-                <button id="search-btn">搜索</button>
+                <input type="text" id="search-input" placeholder="搜尋漢字...">
+                <button id="search-btn">搜尋</button>
             </div>
             <div id="word-list" class="word-list">
                 <!-- Words will be loaded here -->
@@ -25,24 +25,102 @@
         </div>
 
         <div id="learn-tab" class="tab-content">
-            <h2>学习模式</h2>
-            <div class="learn-controls">
-                <button id="start-learn">开始学习</button>
-                <select id="word-count">
-                    <option value="10">10个字</option>
-                    <option value="20">20个字</option>
-                    <option value="50">50个字</option>
-                </select>
+            <h2>學習模式</h2>
+
+            <!-- Stats Dashboard -->
+            <div id="learn-stats" class="stats-dashboard">
+                <div class="stat-item">
+                    <div class="stat-value" id="total-cards">0</div>
+                    <div class="stat-label">總卡片</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="due-today">0</div>
+                    <div class="stat-label">今日複習</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="new-cards">0</div>
+                    <div class="stat-label">新卡片</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="retention-rate">0%</div>
+                    <div class="stat-label">正確率</div>
+                </div>
             </div>
+
+            <!-- Session Controls -->
+            <div class="learn-controls">
+                <button id="start-learn" class="primary-btn">開始學習</button>
+                <select id="word-count">
+                    <option value="10">10個字</option>
+                    <option value="20">20個字</option>
+                    <option value="50">50個字</option>
+                </select>
+                <button id="manage-cards">管理卡片</button>
+            </div>
+
+            <!-- Learning Content -->
             <div id="learn-content" class="learn-content">
-                <!-- Learning content will appear here -->
+                <!-- Learning session interface -->
+                <div id="session-view" class="session-view" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="session-progress"></div>
+                        <span class="progress-text" id="session-text">0/0</span>
+                    </div>
+
+                    <div id="session-active" class="session-active" style="display: none;">
+                        <div class="session-info">
+                            <h3>學習會話進行中</h3>
+                            <p>已在新標籤頁中打開第一個漢字頁面</p>
+                            <p>請在頁面工具欄中評分，系統會自動打開下一個漢字</p>
+                            <div class="session-progress-info">
+                                <div class="progress-text-large" id="session-cards-left">0/0</div>
+                                <div class="progress-label">剩餘卡片</div>
+                            </div>
+                        </div>
+                        <button id="pause-session" class="secondary-btn">暫停學習</button>
+                        <button id="end-session" class="secondary-btn">結束學習</button>
+                    </div>
+
+                    <div id="session-ready" class="session-ready">
+                        <p>點擊「開始學習」將依次打開漢字頁面進行學習</p>
+                        <p>每個頁面加載後，請在工具欄中評分以繼續</p>
+                    </div>
+                </div>
+
+                <!-- Card Management View -->
+                <div id="manage-view" class="manage-view" style="display: none;">
+                    <h3>管理學習卡片</h3>
+                    <div class="manage-actions">
+                        <div class="button-row">
+                            <button id="export-data">匯出數據</button>
+                            <button id="import-data">匯入數據</button>
+                        </div>
+                        <button id="clear-all-data">清除所有數據</button>
+                    </div>
+                    <div id="card-list" class="card-list">
+                        <!-- Cards will be listed here -->
+                    </div>
+                </div>
+
+                <!-- Default view -->
+                <div id="default-view" class="default-view">
+                    <p>選擇學習設定並點擊「開始學習」開始你的學習會話。</p>
+                    <div class="learning-tips">
+                        <h4>學習提示：</h4>
+                        <ul>
+                            <li>每天複習需要複習的卡片</li>
+                            <li>新卡片會根據你的掌握程度安排複習時間</li>
+                            <li>誠實評估你的記憶程度，系統會優化你的學習計劃</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="test-tab" class="tab-content">
-            <h2>测试模式</h2>
+            <h2>測試模式</h2>
             <div class="test-controls">
-                <button id="start-test">开始测试</button>
+                <button id="start-test">開始測試</button>
             </div>
             <div id="test-content" class="test-content">
                 <!-- Test content will appear here -->
@@ -51,6 +129,8 @@
     </div>
 
     <script src="js/characters.js"></script>
+    <script src="js/fsrs-bundle.js"></script>
+    <script src="js/learning-manager.js"></script>
     <script src="js/popup.js"></script>
 </body>
 </html>

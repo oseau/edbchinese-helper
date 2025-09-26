@@ -11,7 +11,11 @@
       "mcp__chrome-devtools__performance_start_trace",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

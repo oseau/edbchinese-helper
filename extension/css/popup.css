@@ -18,6 +18,315 @@ body {
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Learning Styles */
+.stats-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.learn-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.primary-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.primary-btn:hover {
+    background: #2980b9;
+}
+
+.secondary-btn {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.secondary-btn:hover {
+    background: #7f8c8d;
+}
+
+.primary-btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Session View */
+.session-view {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    position: relative;
+    height: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.session-active {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.session-info {
+    margin-bottom: 20px;
+}
+
+.session-info h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.session-info p {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.session-progress-info {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.progress-text-large {
+    font-size: 36px;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.progress-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.session-ready {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.session-ready p {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.session-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Management View */
+.manage-view {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.manage-view h3 {
+    margin-bottom: 0.5rem;
+}
+
+.manage-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.manage-actions .button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.manage-actions .button-row button {
+    flex: 1;
+}
+
+.manage-actions button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    background: white;
+    transition: all 0.2s;
+}
+
+.manage-actions button:hover {
+    background: #f8f9fa;
+}
+
+.card-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-item:last-child {
+    border-bottom: none;
+}
+
+.card-character {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-status {
+    font-size: 12px;
+    color: #666;
+}
+
+.card-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.card-actions button {
+    padding: 4px 8px;
+    font-size: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    background: white;
+}
+
+.card-actions button:hover {
+    background: #f8f9fa;
+}
+
+/* Default View */
+.default-view {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.learning-tips {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.learning-tips h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.learning-tips ul {
+    color: #555;
+    padding-left: 20px;
+}
+
+.learning-tips li {
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 350px) {
+    .stats-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .learn-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rating-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .character-display {
+        font-size: 60px;
+        padding: 15px;
+    }
+}
     color: #2c3e50;
     margin-bottom: 20px;
     font-size: 24px;
@@ -38,7 +347,7 @@ h1 {
     font-size: 14px;
     color: #666;
     border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
+    margin-bottom: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -100,6 +409,10 @@ h1 {
     border-bottom: 1px solid #eee;
     cursor: pointer;
     transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 .word-item:hover {
@@ -122,6 +435,49 @@ h1 {
     color: #666;
 }
 
+.word-main {
+    flex: 1;
+}
+
+.word-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.word-card-status {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.word-card-status.status-new {
+    background-color: #3498db;
+    color: white;
+}
+
+.word-card-status.status-due {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.word-card-status.status-soon {
+    background-color: #f39c12;
+    color: white;
+}
+
+.word-card-status.status-later {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.word-card-reviews {
+    font-size: 9px;
+    color: #7f8c8d;
+}
+
 .learn-controls, .test-controls {
     margin-bottom: 20px;
 }
@@ -134,7 +490,10 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    margin-right: 10px;
+}
+
+.learn-controls button {
+    flex: 1;
 }
 
 .learn-controls button:hover, .test-controls button:hover {
@@ -146,6 +505,7 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
+    flex: 1;
 }
 
 .learn-content, .test-content {
