@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "EDB Chinese Helper",
+  "version": "1.0.0",
+  "description": "Chrome extension to help learn Chinese characters from Hong Kong Education Bureau's word list",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "contextMenus",
+    "offscreen"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "EDB Chinese Helper"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.edbchinese.hk/*"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/*", "css/*"],
+      "matches": ["https://www.edbchinese.hk/*"]
+    }
+  ]
+}

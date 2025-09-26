@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EDB Chinese Helper</title>
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>EDB Chinese Helper</h1>
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="index">词表</button>
+            <button class="tab-btn" data-tab="learn">学习</button>
+            <button class="tab-btn" data-tab="test">测试</button>
+        </nav>
+
+        <div id="index-tab" class="tab-content active">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="搜索汉字...">
+                <button id="search-btn">搜索</button>
+            </div>
+            <div id="word-list" class="word-list">
+                <!-- Words will be loaded here -->
+            </div>
+        </div>
+
+        <div id="learn-tab" class="tab-content">
+            <h2>学习模式</h2>
+            <div class="learn-controls">
+                <button id="start-learn">开始学习</button>
+                <select id="word-count">
+                    <option value="10">10个字</option>
+                    <option value="20">20个字</option>
+                    <option value="50">50个字</option>
+                </select>
+            </div>
+            <div id="learn-content" class="learn-content">
+                <!-- Learning content will appear here -->
+            </div>
+        </div>
+
+        <div id="test-tab" class="tab-content">
+            <h2>测试模式</h2>
+            <div class="test-controls">
+                <button id="start-test">开始测试</button>
+            </div>
+            <div id="test-content" class="test-content">
+                <!-- Test content will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/characters.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>
